@@ -4,7 +4,7 @@ import { buildFlightComparison } from "../../artifacts/api-server/src/lib/flight
 import { searchFlightCandidates } from "../../artifacts/api-server/src/lib/live-data";
 import { flightOffer, flightResult } from "./flight-fixtures";
 import { flightDeltas, flightMetrics, visibleFlightAlternatives } from "../../artifacts/travel-optimizer/src/lib/flight-display";
-import { normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/ai";
+import { normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/itinerary-generator";
 
 const balanced = flightOffer("balanced", 500, 600);
 const cheap = flightOffer("cheap", 400, 1800, 2, "CCC");

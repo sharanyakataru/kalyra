@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { rankActivities, scoreActivity, geographicDistanceKm } from "../../artifacts/api-server/src/lib/activity-optimizer";
 import { discoverDailyActivities } from "../../artifacts/api-server/src/lib/daily-activities";
-import { normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/ai";
+import { normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/itinerary-generator";
 import type { PlaceResult } from "../../artifacts/api-server/src/lib/places";
 import { liveSource } from "../../artifacts/api-server/src/lib/sources";
 

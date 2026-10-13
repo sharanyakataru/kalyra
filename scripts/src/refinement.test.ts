@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { modifyItinerary, normalizeItinerary, shortenItinerary, type TripData } from "../../artifacts/api-server/src/lib/ai";
+import { modifyItinerary, normalizeItinerary, shortenItinerary, type TripData } from "../../artifacts/api-server/src/lib/itinerary-generator";
 const trip: TripData = { id: "refinement", destination: "Test region", starting_location: "Origin", start_date: "2026-10-01", end_date: "2026-10-06", traveler_count: 1, budget: 2000, budget_preference: "Balance", traveler_profile: { interests: [], preferences: [], travel_style: "Balanced" } };
 function plan(single = false) {
   return normalizeItinerary({ route: single ? [{ location: "Base A", nights: 5, transport_to_next: null, duration_hours: null }] : [{ location: "Base A", nights: 2, transport_to_next: "train", duration_hours: 2 }, { location: "Base B", nights: 3, transport_to_next: null, duration_hours: null }], daily_schedule: Array.from({ length: 6 }, (_, i) => ({ day: i + 1, date: `2026-10-0${i + 1}`, location: single || i < 2 ? "Base A" : "Base B", activities: { morning: `Original morning ${i}`, afternoon: `Original afternoon ${i}`, evening: "Dinner", transport: "Local", food_recommendation: "", estimated_cost: 30 } })) }, trip);

@@ -18,7 +18,7 @@ import {
   type TripData,
   type ItineraryData,
   type RouteStop,
-} from "../../lib/ai";
+} from "../../lib/itinerary-generator";
 import { computeTripHealthScore } from "../../lib/scoring";
 import { DESTINATIONS } from "../../lib/destinations";
 import { parseDateRangeFromText, parseTripDuration } from "../../lib/trip-utils";

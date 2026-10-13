@@ -1,4 +1,4 @@
-import type { ItineraryData, TripData } from "./ai";
+import type { ItineraryData, TripData } from "./itinerary-generator";
 import { resolveLocation } from "./places";
 import { getWeatherForecast, type WeatherSummary } from "./weather";
 

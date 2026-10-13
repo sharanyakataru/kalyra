@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { generateItinerary, normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/ai";
+import { generateItinerary, normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/itinerary-generator";
 import { discoverDailyActivities, formatPlaceDescription } from "../../artifacts/api-server/src/lib/daily-activities";
 import type { PlaceResult, PlacesProvider } from "../../artifacts/api-server/src/lib/places";
 

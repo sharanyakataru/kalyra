@@ -7,8 +7,12 @@
     "hello": "tsx ./src/hello.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test:decision-engine": "tsx --test ./src/decision-engine.test.ts",
-    "test:refinement-api": "pnpm --filter @workspace/api-server build && tsx --env-file=../.env --test ./src/reduce-travel-days-api.test.ts",
-    "test:auth": "tsx --env-file=../.env --test ./src/password.test.ts ./src/auth.test.ts"
+    "test:refinement-api": "pnpm --filter @workspace/api-server build && tsx --env-file-if-exists=../.env --test ./src/reduce-travel-days-api.test.ts",
+    "test:auth": "tsx --env-file-if-exists=../.env --test ./src/password.test.ts ./src/auth.test.ts",
+    "test:unit": "tsx --test ./src/activity-optimizer.test.ts ./src/daily-activities.test.ts ./src/decision-engine.test.ts ./src/flight-allocation-display.test.ts ./src/flight-alternatives.test.ts ./src/flight-candidates.test.ts ./src/flight-normalization.test.ts ./src/itinerary-copy.test.ts ./src/live-data-latency.test.ts ./src/optimization-modes.test.ts ./src/password.test.ts ./src/places-provider.test.ts ./src/provider-cache.test.ts ./src/refinement.test.ts ./src/restaurant-recommendations.test.ts ./src/route-explanations.test.ts ./src/trip-hooks.test.ts ./src/walking.test.ts ./src/weather.test.ts",
+    "test:db": "pnpm --filter @workspace/api-server build && tsx --env-file-if-exists=../.env --test ./src/auth.test.ts ./src/trip-ownership.test.ts ./src/reduce-travel-days-api.test.ts",
+    "test": "pnpm run test:unit && pnpm run test:db",
+    "benchmark": "tsx --env-file-if-exists=../.env ./src/benchmark.ts"
   },
   "dependencies": {
     "@workspace/db": "workspace:*"

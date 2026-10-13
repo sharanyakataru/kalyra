@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test, { type TestContext } from "node:test";
 import { generateEnrichedItinerary, enrichItineraryWithLiveData } from "../../artifacts/api-server/src/lib/live-data";
-import { normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/ai";
+import { normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/itinerary-generator";
 import { fallbackSource, liveSource } from "../../artifacts/api-server/src/lib/sources";
 import type { FlightSearchResult } from "../../artifacts/api-server/src/lib/flights";
 

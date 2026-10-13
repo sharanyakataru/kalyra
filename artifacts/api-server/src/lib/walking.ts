@@ -1,4 +1,4 @@
-import type { DailyItinerary, ItineraryData } from "./ai";
+import type { DailyItinerary, ItineraryData } from "./itinerary-generator";
 import { liveSource, type DataSourceMetadata } from "./sources";
 
 export interface ActivityPlace { name: string; location: string; lat: number; lon: number }

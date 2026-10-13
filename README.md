@@ -1,5 +1,7 @@
 # Kalyra
 
+[![CI](https://github.com/sharanyakataru/kalyra/actions/workflows/ci.yml/badge.svg)](https://github.com/sharanyakataru/kalyra/actions/workflows/ci.yml)
+
 ### A better way to find your way.
 
 Kalyra is a decision-focused travel planning platform that helps travelers design better trips by optimizing **time, budget, and experiences**.
@@ -289,11 +291,51 @@ Run repository type checks:
 pnpm run typecheck
 ```
 
+Run the tests:
+
+```bash
+pnpm test            # everything
+pnpm run test:unit   # no database needed
+pnpm run test:db     # needs DATABASE_URL (auth, trip ownership, end-to-end API)
+```
+
 Build the project:
 
 ```bash
 pnpm run build
 ```
+
+---
+
+## Testing
+
+Kalyra has about 120 automated tests across 22 files, written with Node's built-in test runner. Every external provider is mocked by stubbing `fetch`, so the tests are fast and never call real services.
+
+| Area | What is verified |
+| --- | --- |
+| Decision engine | The same input always produces the same plan; candidate order never changes a score; preferences, budget and pace shift rankings the right way; unknown destinations are marked limited-confidence instead of getting invented precision |
+| Refinements | Removing a destination keeps the trip length; "Slow Down" actually frees afternoons; shortening a trip protects the departure day |
+| Live data and caching | Concurrent identical requests share one call; failed lookups expire; flight search starts while activity discovery is still running |
+| Weather | Live forecasts inside the forecast window, historical averages beyond it, and history is never presented as a forecast |
+| Auth and ownership | Password hashing, sessions, and users only seeing their own trips |
+| End to end | The built API generates a trip, shortens it through the browser client, and persists the new version |
+
+GitHub Actions runs the typecheck, the unit tests, and the database tests (against a Postgres service) on every push and pull request.
+
+---
+
+## Performance
+
+Generating a trip pulls places, routes, airports, weather and flights from several providers, so provider calls dominate generation time. Running independent calls concurrently, deduplicating repeated requests, and sharing in-flight requests through a cache brought a typical generation from about **10.3s to 5.2s** and from **153 to 88 provider calls**.
+
+To measure it yourself (needs provider keys in `.env`):
+
+```bash
+pnpm run benchmark        # 5 cold runs, each in a fresh process so the cache starts empty
+pnpm run benchmark -- 10  # 10 cold runs
+```
+
+The benchmark reports the median generation time, the median number of provider calls, and a breakdown of calls by provider.
 
 ---
 

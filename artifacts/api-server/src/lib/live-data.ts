@@ -1,6 +1,6 @@
 import { buildFlightComparison } from "./flight-alternatives";
 import { hasPreparedWeather } from "./itinerary-weather";
-import { createBaseItinerary, generateItinerary, type ItineraryData, type TripData } from "./ai";
+import { createBaseItinerary, generateItinerary, type ItineraryData, type TripData } from "./itinerary-generator";
 import { enrichWalkingLegs } from "./walking";
 import {
   searchFlights,

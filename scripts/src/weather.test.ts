@@ -3,7 +3,7 @@ import test from "node:test";
 import { aggregateHistorical, createHistoricalWeather } from "../../artifacts/api-server/src/lib/historical-weather";
 import { getWeatherForecast, type WeatherSummary } from "../../artifacts/api-server/src/lib/weather";
 import { scoreActivity } from "../../artifacts/api-server/src/lib/activity-optimizer";
-import { generateItinerary, type TripData } from "../../artifacts/api-server/src/lib/ai";
+import { generateItinerary, type TripData } from "../../artifacts/api-server/src/lib/itinerary-generator";
 import { enrichItineraryWithLiveData } from "../../artifacts/api-server/src/lib/live-data";
 import { weatherPresentation } from "../../artifacts/travel-optimizer/src/lib/weather-label";
 import { liveSource } from "../../artifacts/api-server/src/lib/sources";

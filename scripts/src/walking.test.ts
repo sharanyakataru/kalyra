@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/ai";
+import { normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/itinerary-generator";
 import { discoverDailyActivities } from "../../artifacts/api-server/src/lib/daily-activities";
 import { cleanWalkingData, createWalkingRouter, enrichWalkingLegs, sensibleWalk } from "../../artifacts/api-server/src/lib/walking";
 import { liveSource } from "../../artifacts/api-server/src/lib/sources";

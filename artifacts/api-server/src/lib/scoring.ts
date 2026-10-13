@@ -17,7 +17,7 @@ import {
   destinationSummary,
   type DestinationAttributes,
 } from "./destinations";
-import type { TripData, ItineraryData, RouteStop } from "./ai";
+import type { TripData, ItineraryData, RouteStop } from "./itinerary-generator";
 import { scoreDestinationForTrip } from "./decision-engine";
 
 // ---------------------------------------------------------------------------

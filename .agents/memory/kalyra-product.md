@@ -23,7 +23,7 @@ Optimize for Experience Value, not cheapest/fastest/most popular. AI should resp
 All AI calls return structured JSON: `{ trip_strategy, route[], destinations[], daily_schedule[], budget_breakdown[], reasoning, tradeoffs[] }`. Modification adds `changes_made[]`.
 
 ## Key files
-- AI service: `artifacts/api-server/src/lib/ai.ts` — analyzeTrip / generateItinerary / modifyItinerary with OpenAI + deterministic fallbacks
+- AI service: `artifacts/api-server/src/lib/itinerary-generator.ts` — analyzeTrip / generateItinerary / modifyItinerary with OpenAI + deterministic fallbacks
 - Routes: `artifacts/api-server/src/routes/trips/index.ts`
 - Context: `artifacts/travel-optimizer/src/context/TripContext.tsx`
 - Pages: `src/pages/landing.tsx`, `plan.tsx`, `analysis.tsx`, `trip.tsx`

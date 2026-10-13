@@ -1,5 +1,5 @@
 import { resolveOptimizationProfile } from "./optimization-profile";
-import type { TripData } from "./ai";
+import type { TripData } from "./itinerary-generator";
 import type { PlaceResult } from "./places";
 import type { WeatherSummary } from "./weather";
 

@@ -11,7 +11,7 @@ import {
   modifyItinerary,
   generateItinerary,
   type TripData,
-} from "../../artifacts/api-server/src/lib/ai";
+} from "../../artifacts/api-server/src/lib/itinerary-generator";
 import type { OptimizationMode } from "../../artifacts/api-server/src/lib/optimization-profile";
 import type {
   PlaceResult,

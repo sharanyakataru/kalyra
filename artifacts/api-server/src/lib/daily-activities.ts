@@ -1,5 +1,5 @@
 import { resolveOptimizationProfile } from "./optimization-profile";
-import type { DailyItinerary, ItineraryData, TripData } from "./ai";
+import type { DailyItinerary, ItineraryData, TripData } from "./itinerary-generator";
 import type { PlaceResult, PlacesProvider } from "./places";
 import { cleanWalkingData, validPlace } from "./walking";
 import { activityIdentity, compareActivities, rankActivities } from "./activity-optimizer";

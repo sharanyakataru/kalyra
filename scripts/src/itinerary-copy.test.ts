@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { generateItinerary, normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/ai";
+import { generateItinerary, normalizeItinerary, type TripData } from "../../artifacts/api-server/src/lib/itinerary-generator";
 
 const trip: TripData = {
   id: "copy-test", destination: "Test region", starting_location: "Test origin",
